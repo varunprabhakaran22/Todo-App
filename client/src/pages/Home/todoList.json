@@ -1,0 +1,7 @@
+[
+    {"status": "Bucket List", "todo" : "Meeting with Night King, Convince him for team up, Capture the Dragon, Take the Iron throne"},
+    {"status": "Bucket List", "todo" : "Send John snow for Night Watch"},
+    {"status": "Bucket List", "todo" : "Put F5 to Broke Lesner"},
+    {"status": "On Process", "todo" : "Fly to moon"},
+    {"status": "Completed", "todo" : "Kill Khal Dargo", "time": { "minute" : 0 , "second" : 0}}
+]

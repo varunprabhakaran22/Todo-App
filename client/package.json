@@ -1,0 +1,58 @@
+{
+    "name": "react-app",
+    "version": "0.1.0",
+    "private": true,
+    "homepage": "https://dev.progradjunior.org",
+    "dependencies": {
+        "@ant-design/icons": "^4.2.2",
+        "antd": "^3.26.5",
+        "antd-img-crop": "^3.9.0",
+        "axios": "^0.19.0",
+        "cors": "^2.8.5",
+        "history": "^4.10.1",
+        "query-string": "^6.9.0",
+        "react": "^16.11.0",
+        "react-device-detect": "^1.11.14",
+        "react-dom": "^16.11.0",
+        "react-router-dom": "^5.1.2",
+        "react-scripts": "^3.4.0"
+    },
+    "scripts": {
+        "start": "source env/local_env.sh && react-scripts start",
+        "dev": "env-cmd -f env/local.env react-scripts start",
+        "build": "env-cmd -f env/prod.env react-scripts build",
+        "test": "react-scripts test",
+        "eject": "react-scripts eject"
+    },
+    "eslintConfig": {
+        "extends": "react-app",
+        "env": {
+            "es6": true
+        },
+        "ignorePatterns": [
+            "node_modules/"
+        ],
+        "parser": "babel-eslint",
+        "parserOptions": {
+            "ecmaVersion": 8
+        }
+    },
+    "browserslist": {
+        "production": [
+            ">0.2%",
+            "not dead",
+            "not op_mini all"
+        ],
+        "development": [
+            "last 1 chrome version",
+            "last 1 firefox version",
+            "last 1 safari version"
+        ]
+    },
+    "devDependencies": {
+        "env-cmd": "^10.1.0",
+        "eslint-plugin-import": "^2.20.1",
+        "file-loader": "^5.0.2",
+        "jwt-decode": "^2.2.0"
+    }
+}
