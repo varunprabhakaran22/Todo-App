@@ -20,7 +20,7 @@
     "scripts": {
         "start": "source env/local_env.sh && react-scripts start",
         "dev": "env-cmd -f env/local.env react-scripts start",
-        "build": "env-cmd -f env/prod.env react-scripts build",
+        "build": "react-scripts build",
         "test": "react-scripts test",
         "eject": "react-scripts eject"
     },
