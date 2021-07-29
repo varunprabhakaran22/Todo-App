@@ -5,9 +5,10 @@ import Layout from '../../components/Layout'
 import {openNotification} from "../../Utils/common.util"
 
 
-export default function Home2() {
+export default function Home() {
     const [state, setState] = useState(TodoList);
     const [time, setTime] = useState({minute: 0, second: 0});
+    const [ myInterval, setMyInterval ] = useState(0)
 
     /*
         Check local storage for state values 
@@ -37,7 +38,7 @@ export default function Home2() {
                     status : "On Process",
                     todo : data.todo
                 }
-                timer()
+                startTimer()
                 newList = [...state]
                 newList.forEach((list, index) => {
                     if((list.status === "Bucket List") && (list.todo === data.todo)) {
@@ -62,7 +63,7 @@ export default function Home2() {
                     }
                 })
                 newList = [...newList, obj]   
-                timer("stop")            
+                stopTimer()           
             }else {
                 openNotification('failure', 'Sart the Process before completing it', 8);
             }
@@ -74,22 +75,27 @@ export default function Home2() {
     };
 
 
-    // Start and stop the timer for On process tasks.
-    const timer = (type) => {
-        var myInterval
-        if(type === undefined){
-            myInterval = setInterval(() => {
-                setTime((time)=>{
-                    return {
-                        minute: time.second === 59 ? time.minute + 1 : time.minute,
-                        second: time.second === 59 ? 0 : time.second + 1
-                    } 
-                });
-            }, 1000);
-        }else{
-            clearInterval(myInterval);
-        }
+    
+    // Start the timer for On process tasks.
+    const startTimer = () => {
+        let myInterval = setInterval(()=>{
+            setTime((time)=>{
+                return {
+                    minute: time.second === 59 ? time.minute + 1 : time.minute,
+                    second: time.second === 59 ? 0 : time.second + 1
+                } 
+            })
+        },1000);
+        setMyInterval(myInterval)
     }
+
+
+    // Stop the timer for On process tasks.
+    const stopTimer = () => {
+        setTime({minute: 0, second: 0})
+        clearInterval(myInterval);
+    }
+       
 
     return (
         <Layout>
